@@ -44,6 +44,8 @@ public class DadosApp extends HttpServlet {
             System.out.println("eita " + lista.get(k));
         }
         
+        session.setAttribute("dadosTarefas", lista);
+        
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/dados.jsp");
         dispatcher.forward(request, response);
         

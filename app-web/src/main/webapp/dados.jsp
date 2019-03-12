@@ -13,231 +13,93 @@
         <title>Dados</title>
     </head>
     <body>
-        
+
         <h1>Pagina Principal</h1>
         <h2>${sessionScope.nome}</h2>
         <h2>${sessionScope.email}</h2>
     <center> <h2>Nome da aplicação</h2></center>
 
-    <fieldset>
+    <c:forEach items="${sessionScope.dadosTarefas}" var="tarefa">
+        <fieldset>
+            <legend> ${tarefa.nome} : ${tarefa.qtda_execucao} execucoes"</legend>
+            <c:forEach items="${tarefa.listExecucoes}" var="execucao">
 
-        <legend> "Nome da tarefa : 356 execuçoes"</legend>
+                <fieldset>
 
-        <center>
-            <h3>Codigo de execucao</h3>
-            <table style="float: left; margin: 20px"  border="1">
-                <tr>
-                    <th> Codigo de execução </th>
-                    <th> Host de execução </th>
-                    <th>Registro de Dados</th>
-                </tr>
-                <c:if test="${sessionScope.tamanhoListApps > 0}">
-                    <c:forEach items="${sessionScope.apps}" var="app">
+                    <h4>Codigo de execução : ${execucao.id}</h4>
+
+                    <table style="float: left; margin: 10px" border="1">
+                        <tr><th colspan="4" style="background: #495057">Memória</th></tr>
                         <tr>
-                            <td>${app.nome}</td>
-                            <td>${app.id}</td>
-                            <td>
-                        <center>
-                            <form action="DadosApp" method="post">
-                                <input type="hidden" name="idApp" VALUE="${app.id}">
-                                <button>Dados</button>
-                            </form>
-
-                        </center>
-                        </td>
+                            <th> Host de Execução </th>
+                            <th> Memória Inicial </th>
+                            <th> Memória Final</th>
                         </tr>
-                    </c:forEach>
-                </c:if>
-            </table>
 
-            <table style="float: left; margin: 20px " border="1">
-                <tr>
-                    <th> Codigo de execução </th>
-                    <th> Host de execução </th>
-                    <th>Registro de Dados</th>
-                </tr>
-                <c:if test="${sessionScope.tamanhoListApps > 0}">
-                    <c:forEach items="${sessionScope.apps}" var="app">
+                        <c:forEach items="${execucao.collectMemoryInfo.collections}" var="data">
+                            <tr>
+                                <td>${data.ip}</td>
+                                <td>${data.initMemory}</td>
+                                <td>${data.endMemory}</td>
+                            </tr>
+                        </c:forEach>
+                    </table>
+
+                    <table style="float: left; margin: 10px" border="1">
+                        <tr><th colspan="4"style="background: #495057">Threads</th></tr>
                         <tr>
-                            <td>${app.nome}</td>
-                            <td>${app.id}</td>
-                            <td>
-                        <center>
-                            <form action="DadosApp" method="post">
-                                <input type="hidden" name="idApp" VALUE="${app.id}">
-                                <button>Dados</button>
-                            </form>
-
-                        </center>
-                        </td>
+                            <th> Host de Execução </th>
+                            <th> Threads Iniciais </th>
+                            <th> Threads Finais</th>
+                            <th> Threads Instanciadas</th>
                         </tr>
-                    </c:forEach>
-                </c:if>
-            </table>
 
-            <table style="float: left; margin: 20px" border="1">
-                <tr>
-                    <th> Codigo de execução </th>
-                    <th> Host de execução </th>
-                    <th>Registro de Dados</th>
-                </tr>
-                <c:if test="${sessionScope.tamanhoListApps > 0}">
-                    <c:forEach items="${sessionScope.apps}" var="app">
+                        <c:forEach items="${execucao.collectThreadInfo.collections}" var="data">
+                            <tr>
+                                <td>${data.ip}</td>
+                                <td>${data.initThreads}</td>
+                                <td>${data.endThreads}</td>
+                                <td>${data.instanceThreads}</td>
+                            </tr>
+                        </c:forEach>
+                    </table>
+
+                    <table style="float: left; margin: 10px" border="1">
+                        <tr><th colspan="4" style="background: #495057">Pacote de Dados</th></tr>
                         <tr>
-                            <td>${app.nome}</td>
-                            <td>${app.id}</td>
-                            <td>
-                        <center>
-                            <form action="DadosApp" method="post">
-                                <input type="hidden" name="idApp" VALUE="${app.id}">
-                                <button>Dados</button>
-                            </form>
-
-                        </center>
-                        </td>
+                            <th> Host de Execução </th>
+                            <th> Entrada de Dados </th>
+                            <th> Saida de Dados</th>
                         </tr>
-                    </c:forEach>
-                </c:if>
-            </table>
 
-            <table style="float: left; margin: 20px" border="1">
-                <tr>
-                    <th> Codigo de execução </th>
-                    <th> Host de execução </th>
-                    <th>Registro de Dados</th>
-                </tr>
-                <c:if test="${sessionScope.tamanhoListApps > 0}">
-                    <c:forEach items="${sessionScope.apps}" var="app">
+                        <c:forEach items="${execucao.tCollectSizePacketInfo.collections}" var="data">
+                            <tr>
+                                <td>${data.ip}</td>
+                                <td>${data.dataInput}</td>
+                                <td>${data.dataOutput}</td>
+                            </tr>
+                        </c:forEach>
+                    </table>
+
+                    <table style="float: left; margin: 10px" border="1">
+                        <tr><th colspan="4" style="background: #495057"> Tempo</th></tr>
                         <tr>
-                            <td>${app.nome}</td>
-                            <td>${app.id}</td>
-                            <td>
-                        <center>
-                            <form action="DadosApp" method="post">
-                                <input type="hidden" name="idApp" VALUE="${app.id}">
-                                <button>Dados</button>
-                            </form>
-
-                        </center>
-                        </td>
+                            <th> Host Inicial </th>
+                            <th> Host Final </th>
+                            <th> Tempo Inicial</th>
+                            <th> Tempo Final </th>
                         </tr>
-                    </c:forEach>
-                </c:if>
-            </table>
-        </center>
 
-    </fieldset>
-    
-    
-    <br><br>
-    
-    <fieldset>
-
-        <legend> "Nome da tarefa : 356 execuçoes"</legend>
-
-        <center>
-            <h3>Codigo de execucao</h3>
-            <table style="float: left; margin: 20px"  border="1">
-                <tr>
-                    <th> Codigo de execução </th>
-                    <th> Host de execução </th>
-                    <th>Registro de Dados</th>
-                </tr>
-                <c:if test="${sessionScope.tamanhoListApps > 0}">
-                    <c:forEach items="${sessionScope.apps}" var="app">
                         <tr>
-                            <td>${app.nome}</td>
-                            <td>${app.id}</td>
-                            <td>
-                        <center>
-                            <form action="DadosApp" method="post">
-                                <input type="hidden" name="idApp" VALUE="${app.id}">
-                                <button>Dados</button>
-                            </form>
-
-                        </center>
-                        </td>
+                            <td>${execucao.collectTimeInfo.ips[0]}</td>
+                            <td>${execucao.collectTimeInfo.ips[1]}</td>
+                            <td>${execucao.collectTimeInfo.initTime}</td>
+                            <td>${execucao.collectTimeInfo.endTime}</td>
                         </tr>
-                    </c:forEach>
-                </c:if>
-            </table>
-
-            <table style="float: left; margin: 20px " border="1">
-                <tr>
-                    <th> Codigo de execução </th>
-                    <th> Host de execução </th>
-                    <th>Registro de Dados</th>
-                </tr>
-                <c:if test="${sessionScope.tamanhoListApps > 0}">
-                    <c:forEach items="${sessionScope.apps}" var="app">
-                        <tr>
-                            <td>${app.nome}</td>
-                            <td>${app.id}</td>
-                            <td>
-                        <center>
-                            <form action="DadosApp" method="post">
-                                <input type="hidden" name="idApp" VALUE="${app.id}">
-                                <button>Dados</button>
-                            </form>
-
-                        </center>
-                        </td>
-                        </tr>
-                    </c:forEach>
-                </c:if>
-            </table>
-
-            <table style="float: left; margin: 20px" border="1">
-                <tr>
-                    <th> Codigo de execução </th>
-                    <th> Host de execução </th>
-                    <th>Registro de Dados</th>
-                </tr>
-                <c:if test="${sessionScope.tamanhoListApps > 0}">
-                    <c:forEach items="${sessionScope.apps}" var="app">
-                        <tr>
-                            <td>${app.nome}</td>
-                            <td>${app.id}</td>
-                            <td>
-                        <center>
-                            <form action="DadosApp" method="post">
-                                <input type="hidden" name="idApp" VALUE="${app.id}">
-                                <button>Dados</button>
-                            </form>
-
-                        </center>
-                        </td>
-                        </tr>
-                    </c:forEach>
-                </c:if>
-            </table>
-
-            <table style="float: left; margin: 20px" border="1">
-                <tr>
-                    <th> Codigo de execução </th>
-                    <th> Host de execução </th>
-                    <th>Registro de Dados</th>
-                </tr>
-                <c:if test="${sessionScope.tamanhoListApps > 0}">
-                    <c:forEach items="${sessionScope.apps}" var="app">
-                        <tr>
-                            <td>${app.nome}</td>
-                            <td>${app.id}</td>
-                            <td>
-                        <center>
-                            <form action="DadosApp" method="post">
-                                <input type="hidden" name="idApp" VALUE="${app.id}">
-                                <button>Dados</button>
-                            </form>
-
-                        </center>
-                        </td>
-                        </tr>
-                    </c:forEach>
-                </c:if>
-            </table>
-        </center>
-
+                    </table>
+                </fieldset>
+            </c:forEach>
+        </c:forEach>
     </fieldset>
 
     <br><br>
