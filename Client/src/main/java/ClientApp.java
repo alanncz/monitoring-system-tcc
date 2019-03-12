@@ -71,7 +71,7 @@ public class ClientApp {
 
     public static void Configuration() throws RemoteException, NotBoundException {
 
-        String idApp = "bb3c19cb42ee48c5b7fc85095cf07001";
+        String idApp = "8f3e877f737c4d54852dc9ffb8b98358";
         String hostCollector = "localhost";
         Configuration.appConfiguration(idApp);
         Configuration.configurationCollector(hostCollector);

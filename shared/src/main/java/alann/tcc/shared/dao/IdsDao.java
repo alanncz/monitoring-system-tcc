@@ -29,7 +29,7 @@ public class IdsDao {
 
         String referenceTabble = "ids" + objeto.getAppReference().getId();
 
-        if (isId(referenceTabble, objeto.getId())) {
+        if (!isId(referenceTabble, objeto.getId())) {
 
             try {
 

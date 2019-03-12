@@ -63,9 +63,9 @@ public class TarefaDao {
                 execucao.setCollectTimeInfo(getCollectTimeInfo(execucao, idApp));
 
                 tarefa.getListExecucoes().add(execucao);
-                System.out.println(tarefa);
-                tarefas.add(tarefa);
             }
+            
+            tarefas.add(tarefa);
 
         }
 

@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,7 +31,7 @@ public class DadosApp extends HttpServlet {
         
         HttpSession session = request.getSession();
 
-        String idApp = "bb3c19cb42ee48c5b7fc85095cf07001";
+        String idApp = "8f3e877f737c4d54852dc9ffb8b98358";
         
         TarefaDao dao = new TarefaDao();
         
@@ -38,9 +39,13 @@ public class DadosApp extends HttpServlet {
         
         ArrayList lista = (ArrayList) dao.listarTarefas(idApp);
         
+        System.out.println(lista.size());
         for(int k = 0; k < lista.size(); k++){
-            System.out.println(lista.get(k));
+            System.out.println("eita " + lista.get(k));
         }
+        
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/dados.jsp");
+        dispatcher.forward(request, response);
         
     }
 
