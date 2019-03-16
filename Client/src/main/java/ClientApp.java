@@ -23,12 +23,15 @@ public class ClientApp {
     public static void main(String[] args) throws RemoteException, NotBoundException, InterruptedException, UnknownHostException, IOException {
 
         Configuration();
-        
-        
+               
         RegistryId rid = RegistryIdManager.newRegistryId("Main", ListTypeData());
+        RegistryId rid2 = RegistryIdManager.newRegistryId("NumerosPrimos", ListTypeData());
         
         NewPessoa np = new NewPessoa();
+        NumerosPrimos numerosPrimos = new NumerosPrimos();
+        
         np.newPessoa(rid);
+        numerosPrimos.numerosPrimos(rid2);
 
         //View view = MonitoringServices.getVIew(cc.getAppReference());
     }
