@@ -32,8 +32,8 @@
                         <tr><th colspan="4" style="background: #495057">Memória</th></tr>
                         <tr>
                             <th> Host de Execução </th>
-                            <th> Memória Inicial </th>
-                            <th> Memória Final</th>
+                            <th> Inicial </th>
+                            <th> Final</th>
                         </tr>
 
                         <c:forEach items="${execucao.collectMemoryInfo.collections}" var="data">
@@ -49,9 +49,9 @@
                         <tr><th colspan="4"style="background: #495057">Threads</th></tr>
                         <tr>
                             <th> Host de Execução </th>
-                            <th> Threads Iniciais </th>
-                            <th> Threads Finais</th>
-                            <th> Threads Instanciadas</th>
+                            <th> Iniciais </th>
+                            <th> Finais</th>
+                            <th> Instanciadas</th>
                         </tr>
 
                         <c:forEach items="${execucao.collectThreadInfo.collections}" var="data">
@@ -86,8 +86,8 @@
                         <tr>
                             <th> Host Inicial </th>
                             <th> Host Final </th>
-                            <th> Tempo Inicial</th>
-                            <th> Tempo Final </th>
+                            <th> Inicial</th>
+                            <th> Final </th>
                         </tr>
 
                         <tr>

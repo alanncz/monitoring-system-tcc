@@ -4,13 +4,9 @@ import alann.tcc.api.MonitoringServicesSizePacket;
 import alann.tcc.api.MonitoringServicesThread;
 import alann.tcc.api.MonitoringServicesTime;
 import alann.tcc.api.RegistryId;
-import alann.tcc.api.RegistryIdManager;
-import alann.tcc.shared.model.TypeData;
 import java.io.IOException;
-import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -24,6 +20,8 @@ import java.util.logging.Logger;
  * @author alann
  */
 public class ServiceIMPL implements Service {
+    
+    private static ArrayList<Pessoa> pessoas = new ArrayList();
 
     public ServiceIMPL() {
     }
@@ -32,10 +30,15 @@ public class ServiceIMPL implements Service {
     public void newPessoa(RegistryId rid, Pessoa pessoa) throws RemoteException {
 
         try {
-
+            
             MonitoringServicesTime.endTime(rid);
             MonitoringServicesMemory.initMemory(rid);
-            MonitoringServicesThread.initQtdaThread(rid);      
+            MonitoringServicesThread.initQtdaThread(rid);
+            
+            Pessoa p = new Pessoa();
+            p.setNome(pessoa.getNome());
+            p.setIdade(pessoa.getIdade());
+            pessoas.add(p);      
 
             MonitoringServicesSizePacket.dataInput(rid, pessoa, true, true);
             MonitoringServicesMemory.endMemory(rid, true);
