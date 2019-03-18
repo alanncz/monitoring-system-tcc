@@ -16,7 +16,7 @@ import java.sql.SQLException;
 public class ConnectionBd {
 
     private static final String USER = "postgres";
-    private static final String SENHA = "ALA91494924";
+    private static final String SENHA = "ala91494924";
     private static final String URL = "jdbc:postgresql://localhost:5432/bd-servidor";
 
     public static Connection getConnection() throws ClassNotFoundException, SQLException {

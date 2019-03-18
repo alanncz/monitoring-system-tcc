@@ -31,7 +31,7 @@ public class DadosApp extends HttpServlet {
         
         HttpSession session = request.getSession();
 
-        String idApp = "9b7ff11723c64b3b83e18c84cc3b5575";
+        String idApp = "96df6a78a6334a69b87d969aa44273f8";
         
         TarefaDao dao = new TarefaDao();
         

@@ -61,7 +61,7 @@ public class DataMemoryCollect implements Serializable{
     public void memoryUsada(){
         long memoryInicial = this.initMemory;
         long memoryFinal = this.endMemory;
-        this.memoryUsada = (memoryInicial - memoryFinal)/1000000;
+        this.memoryUsada = (memoryInicial - memoryFinal);
     }
 
     @Override

@@ -84,7 +84,7 @@
                     </table>
 
                     <table style="float: left; margin: 10px" border="1">
-                        <tr><th colspan="4" style="background: #495057"> Tempo</th></tr>
+                        <tr><th colspan="5" style="background: #495057"> Tempo</th></tr>
                         <tr>
                             <th> Host Inicial </th>
                             <th> Host Final </th>
