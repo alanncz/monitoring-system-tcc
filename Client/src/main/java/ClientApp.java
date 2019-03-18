@@ -23,17 +23,20 @@ public class ClientApp {
     public static void main(String[] args) throws RemoteException, NotBoundException, InterruptedException, UnknownHostException, IOException {
 
         Configuration();
-               
-        RegistryId rid = RegistryIdManager.newRegistryId("Main", ListTypeData());
-        RegistryId rid2 = RegistryIdManager.newRegistryId("NumerosPrimos", ListTypeData());
-        
-        NewPessoa np = new NewPessoa();
-        NumerosPrimos numerosPrimos = new NumerosPrimos();
-        
-        np.newPessoa(rid);
-        numerosPrimos.numerosPrimos(rid2);
 
-        //View view = MonitoringServices.getVIew(cc.getAppReference());
+        for (int k = 0; k < 50; k++) {
+
+            RegistryId rid = RegistryIdManager.newRegistryId("Main", ListTypeData());
+            RegistryId rid2 = RegistryIdManager.newRegistryId("NumerosPrimos", ListTypeData());
+
+            NewPessoa np = new NewPessoa();
+            NumerosPrimos numerosPrimos = new NumerosPrimos();
+
+            np.newPessoa(rid);
+            numerosPrimos.numerosPrimos(rid2);
+
+            //View view = MonitoringServices.getVIew(cc.getAppReference());
+        }
     }
 
     public static void Configuration() throws RemoteException, NotBoundException {
@@ -44,8 +47,8 @@ public class ClientApp {
         Configuration.configurationCollector(hostCollector);
 
     }
-    
-    public static ArrayList<TypeData> ListTypeData(){
+
+    public static ArrayList<TypeData> ListTypeData() {
         ArrayList<TypeData> registryIds = new ArrayList();
         registryIds.add(TypeData.TaskTime);
         registryIds.add(TypeData.TaskMemory);

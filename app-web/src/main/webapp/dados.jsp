@@ -34,6 +34,7 @@
                             <th> Host de Execução </th>
                             <th> Inicial </th>
                             <th> Final</th>
+                            <th> Memória Usada</th>
                         </tr>
 
                         <c:forEach items="${execucao.collectMemoryInfo.collections}" var="data">
@@ -41,6 +42,7 @@
                                 <td>${data.ip}</td>
                                 <td>${data.initMemory}</td>
                                 <td>${data.endMemory}</td>
+                                <td>${data.memoryUsada}</td>
                             </tr>
                         </c:forEach>
                     </table>
@@ -88,6 +90,7 @@
                             <th> Host Final </th>
                             <th> Inicial</th>
                             <th> Final </th>
+                            <th> Milisegundos </th>
                         </tr>
 
                         <tr>
@@ -95,6 +98,7 @@
                             <td>${execucao.collectTimeInfo.ips[1]}</td>
                             <td>${execucao.collectTimeInfo.initTime}</td>
                             <td>${execucao.collectTimeInfo.endTime}</td>
+                            <td>${execucao.collectTimeInfo.milisegundos}</td>
                         </tr>
                     </table>
                 </fieldset>

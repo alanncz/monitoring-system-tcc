@@ -32,20 +32,19 @@ public class OperationCollectTimeInfo implements Runnable {
 
     @Override
     public void run() {
-        
+
         try {
             semaphore.acquire();
             CollectTimeInfo collect = getCollect();
             setCollect(collect);
             semaphore.release();
-            
-            
+
         } catch (InterruptedException ex) {
             Logger.getLogger(OperationCollectTimeInfo.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
-    
+
     private CollectTimeInfo getCollect() throws InterruptedException {
         if (!listCollect.isEmpty()) {
             for (int k = 0; k < listCollect.size(); k++) {
@@ -57,7 +56,7 @@ public class OperationCollectTimeInfo implements Runnable {
         }
         return null;
     }
-    
+
     private void setCollect(CollectTimeInfo collect) {
         if (dataTimeInfo.getTypeTimeRecorded() == 1) {
             collect.setInitTime(dataTimeInfo.getTimeRecord());
@@ -66,7 +65,7 @@ public class OperationCollectTimeInfo implements Runnable {
         if (dataTimeInfo.getTypeTimeRecorded() == 2) {
             collect.setEndTime(dataTimeInfo.getTimeRecord());
             collect.getIps().add(1, dataTimeInfo.getIp());
-            if (dataTimeInfo.isEndCommit()){
+            if (dataTimeInfo.isEndCommit()) {
                 TemporaryRepository.set(collect);
                 executor.submit(new Send());
                 listCollect.remove(collect);
@@ -74,8 +73,8 @@ public class OperationCollectTimeInfo implements Runnable {
         }
         collect.setCommit();
     }
-    
-    public static void newCollect(CollectTimeInfo collect) throws InterruptedException{
+
+    public static void newCollect(CollectTimeInfo collect) throws InterruptedException {
         semaphore.acquire();
         listCollect.add(collect);
         semaphore.release();

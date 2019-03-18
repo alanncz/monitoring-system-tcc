@@ -88,6 +88,7 @@ public class TarefaDao {
             dmc.setIp(rs.getString("ip"));
             dmc.setEndMemory(Long.parseLong(rs.getString("end_memory")));
             dmc.setInitMemory(Long.parseLong(rs.getString("init_memory")));
+            dmc.memoryUsada();
             cmi.getCollections().add(dmc);
         }
 
@@ -156,6 +157,7 @@ public class TarefaDao {
 
         cti.getIps().add(rs.getString("init_ip"));
         cti.getIps().add(rs.getString("end_ip"));
+        cti.milisegundos();
 
         return cti;
     }

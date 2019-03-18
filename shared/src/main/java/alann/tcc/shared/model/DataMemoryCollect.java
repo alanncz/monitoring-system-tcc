@@ -16,6 +16,7 @@ public class DataMemoryCollect implements Serializable{
     private String ip;
     private long initMemory;
     private long endMemory;
+    private long memoryUsada;
     
     public DataMemoryCollect(){}
 
@@ -47,6 +48,20 @@ public class DataMemoryCollect implements Serializable{
 
     public void setEndMemory(long endMemory) {
         this.endMemory = endMemory;
+    }
+
+    public long getMemoryUsada() {
+        return memoryUsada;
+    }
+
+    public void setMemoryUsada(long memoryUsada) {
+        this.memoryUsada = memoryUsada;
+    }
+    
+    public void memoryUsada(){
+        long memoryInicial = this.initMemory;
+        long memoryFinal = this.endMemory;
+        this.memoryUsada = (memoryInicial - memoryFinal)/1000000;
     }
 
     @Override

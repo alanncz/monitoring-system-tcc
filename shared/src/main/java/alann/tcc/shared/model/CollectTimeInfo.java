@@ -21,6 +21,7 @@ public class CollectTimeInfo extends Collect implements Serializable{
     private Timestamp endTime;
     private boolean complete;
     private int commit;
+    private String milisegundos;
     
     public CollectTimeInfo(){
         this.ips = new ArrayList();
@@ -72,6 +73,23 @@ public class CollectTimeInfo extends Collect implements Serializable{
     public boolean isComplete(){
         if (this.complete == true) return true;
         return false;
+    }
+
+    public String getMilisegundos() {
+        return milisegundos;
+    }
+
+    public void setMilisegundos(String milisegundos) {
+        this.milisegundos = milisegundos;
+    }
+    
+    
+    public void milisegundos(){
+        long tempoInicial = initTime.getTime();
+        long tempoFinal = endTime.getTime();
+        
+        long resultado = tempoFinal - tempoInicial;
+        this.milisegundos = Long.toString(resultado);
     }
 
     @Override
