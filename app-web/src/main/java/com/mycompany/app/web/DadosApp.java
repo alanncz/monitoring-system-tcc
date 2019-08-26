@@ -9,6 +9,7 @@ import alann.tcc.shared.modelView.TarefaDao;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -30,19 +31,12 @@ public class DadosApp extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         
         HttpSession session = request.getSession();
-
-        String idApp = "c8e8c2ea8e6f421b8a4b7a4ce63a8171";
+        
+        String idApp = (String) request.getParameter("idApp");
         
         TarefaDao dao = new TarefaDao();
         
-        System.out.println("CHEGOU AQUI DOIDO");
-        
         ArrayList lista = (ArrayList) dao.listarTarefas(idApp);
-        
-        System.out.println(lista.size());
-        for(int k = 0; k < lista.size(); k++){
-            System.out.println("eita " + lista.get(k));
-        }
         
         session.setAttribute("dadosTarefas", lista);
         

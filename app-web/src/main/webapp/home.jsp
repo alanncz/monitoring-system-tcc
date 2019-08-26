@@ -40,15 +40,15 @@
                         <td>${app.nome}</td>
                         <td>${app.id}</td>
                         <td>
-                            <center>
-                                <form action="DadosApp" method="post">
-                                    <input type="hidden" name="idApp" VALUE="${app.id}">
-                                    <button>Dados</button>
-                                </form>
+                    <center>
+                        <form action="DadosApp" method="post">
+                            <input type="hidden" name="idApp" value=${app.id} >
+                            <input type="submit" value="enviar">
+                        </form>
 
-                            </center>
-                    </td>
-                </tr>
+                    </center>
+                </td>
+            </tr>
         </c:forEach>
     </c:if>
 </table>
