@@ -5,7 +5,7 @@
  */
 package com.mycompany.app.web;
 
-import alann.tcc.shared.modelView.TarefaDao;
+import alann.tcc.shared.dao.TarefaDao;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;

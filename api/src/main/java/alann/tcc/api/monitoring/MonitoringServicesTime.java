@@ -1,5 +1,8 @@
-package alann.tcc.api;
+package alann.tcc.api.monitoring;
 
+import alann.tcc.api.util.RegistryId;
+import alann.tcc.api.configuration.Configuration;
+import alann.tcc.api.configuration.Configuration;
 import alann.tcc.shared.model.DataInfo;
 import alann.tcc.shared.model.DataTimeInfo;
 import alann.tcc.shared.model.TypeData;

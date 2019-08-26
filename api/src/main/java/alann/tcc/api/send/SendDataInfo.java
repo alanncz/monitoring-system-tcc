@@ -1,4 +1,4 @@
-package alann.tcc.api;
+package alann.tcc.api.send;
 
 
 import alann.tcc.shared.model.DataInfo;

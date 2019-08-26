@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package alann.tcc.collector.operations;
+package alann.tcc.collector.main;
 
+import alann.tcc.collector.receiver.CollectorIMPL;
 import alann.tcc.shared.services.Collector;
 import java.rmi.AlreadyBoundException;
 import java.rmi.RemoteException;

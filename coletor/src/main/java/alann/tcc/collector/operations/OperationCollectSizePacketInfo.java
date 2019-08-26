@@ -5,6 +5,7 @@
  */
 package alann.tcc.collector.operations;
 
+import alann.tcc.collector.send.Send;
 import alann.tcc.shared.model.CollectSizePacketInfo;
 import alann.tcc.shared.model.DataSizePacketCollect;
 import alann.tcc.shared.model.DataSizePacketInfo;

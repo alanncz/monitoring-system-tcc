@@ -5,6 +5,7 @@
  */
 package alann.tcc.collector.operations;
 
+import alann.tcc.collector.send.Send;
 import alann.tcc.shared.model.CollectTimeInfo;
 import alann.tcc.shared.model.DataTimeInfo;
 import java.util.ArrayList;

@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package alann.tcc.api;
+package alann.tcc.api.monitoring;
 
+import alann.tcc.api.util.RegistryId;
+import alann.tcc.api.configuration.Configuration;
+import alann.tcc.api.configuration.Configuration;
 import alann.tcc.shared.model.DataThreadInfo;
 import alann.tcc.shared.model.TypeData;
 import java.net.InetAddress;

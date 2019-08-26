@@ -5,6 +5,7 @@
  */
 package alann.tcc.collector.operations;
 
+import alann.tcc.collector.send.Send;
 import alann.tcc.shared.model.CollectMemoryInfo;
 import alann.tcc.shared.model.CollectThreadInfo;
 import alann.tcc.shared.model.DataThreadCollect;

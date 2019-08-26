@@ -3,8 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package alann.tcc.collector.operations;
+package alann.tcc.collector.receiver;
 
+import alann.tcc.collector.operations.OperationCollect;
+import alann.tcc.collector.operations.OperationCollectMemoryInfo;
+import alann.tcc.collector.operations.OperationCollectSizePacketInfo;
+import alann.tcc.collector.operations.OperationCollectThreadInfo;
+import alann.tcc.collector.operations.OperationCollectTimeInfo;
 import alann.tcc.shared.model.Collect;
 import alann.tcc.shared.model.CollectMemoryInfo;
 import alann.tcc.shared.model.CollectSizePacketInfo;

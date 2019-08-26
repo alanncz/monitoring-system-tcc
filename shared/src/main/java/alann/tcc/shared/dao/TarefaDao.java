@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package alann.tcc.shared.modelView;
+package alann.tcc.shared.dao;
 
 import alann.tcc.shared.dao.ConnectionBd;
 import alann.tcc.shared.model.CollectMemoryInfo;
@@ -13,6 +13,8 @@ import alann.tcc.shared.model.CollectTimeInfo;
 import alann.tcc.shared.model.DataMemoryCollect;
 import alann.tcc.shared.model.DataSizePacketCollect;
 import alann.tcc.shared.model.DataThreadCollect;
+import alann.tcc.shared.modelView.Execucao;
+import alann.tcc.shared.modelView.Tarefa;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

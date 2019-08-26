@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package alann.tcc.collector.operations;
+package alann.tcc.collector.send;
 
+import alann.tcc.collector.operations.TemporaryRepository;
 import alann.tcc.shared.model.Collect;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;

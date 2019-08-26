@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package alann.tcc.api;
+package alann.tcc.api.configuration;
 
 import alann.tcc.shared.model.AppReference;
 import alann.tcc.shared.services.ConfigurationService;

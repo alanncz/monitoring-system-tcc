@@ -5,6 +5,7 @@
  */
 package alann.tcc.collector.operations;
 
+import alann.tcc.collector.send.Send;
 import alann.tcc.shared.model.Collect;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
