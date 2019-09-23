@@ -10,6 +10,3 @@ cd ..
 cd coletor
 sh start.sh
 cd ..
-cd Server
-sh start.sh
-cd ..
