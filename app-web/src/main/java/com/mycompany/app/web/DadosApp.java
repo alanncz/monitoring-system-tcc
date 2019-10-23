@@ -9,6 +9,7 @@ import alann.tcc.shared.dao.TarefaDao;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Enumeration;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -37,6 +38,7 @@ public class DadosApp extends HttpServlet {
         TarefaDao dao = new TarefaDao();
         
         ArrayList lista = (ArrayList) dao.listarTarefas(idApp);
+        Collections.reverse(lista);
         
         session.setAttribute("dadosTarefas", lista);
         

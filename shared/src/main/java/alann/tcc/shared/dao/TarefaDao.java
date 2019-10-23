@@ -21,6 +21,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -51,7 +52,7 @@ public class TarefaDao {
             tarefa.setNome(rs.getString("tarefa"));
             tarefa.setQtda_execucao(rs.getInt("qtda_execucao"));
 
-            String sql1 = "select * from ids" + idApp + " where tarefa=?";
+            String sql1 = "select * from ids" + idApp + " where tarefa=? ";
             PreparedStatement stmt1 = con.prepareStatement(sql1);
             stmt1.setString(1, rs.getString("tarefa"));
             ResultSet rs1 = stmt1.executeQuery();
@@ -68,9 +69,8 @@ public class TarefaDao {
             }
             
             tarefas.add(tarefa);
-
         }
-
+        
         return tarefas;
     }
 
@@ -144,7 +144,7 @@ public class TarefaDao {
 
     private CollectTimeInfo getCollectTimeInfo(Execucao execucao, String idApp) throws SQLException {
 
-        String sql = "select * from ti" + idApp + " where id=?";
+        String sql = "select * from ti" + idApp + " where id=? order by init_time desc";
 
         PreparedStatement stmt = con.prepareStatement(sql);
         stmt.setString(1, execucao.getId());
